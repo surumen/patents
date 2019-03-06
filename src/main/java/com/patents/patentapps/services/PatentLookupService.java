@@ -4,16 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.UriComponentsBuilder;
 
 import com.patents.patentapps.api.Patent;
 import com.patents.patentapps.api.Response;
 import com.patents.patentapps.api.Root;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -46,7 +44,7 @@ public class PatentLookupService implements LookupService {
         headers.setContentType(MediaType.APPLICATION_JSON);
 
         // HttpEntity<Root>: To get result as Root.
-        HttpEntity<Root> entity = new HttpEntity<Root>(headers);
+        HttpEntity<Root> entity = new HttpEntity<>(headers);
 
         // Send request with GET method, and Headers.
         ResponseEntity<Root> response = restTemplate.exchange(API_URL, HttpMethod.GET, entity, Root.class);
@@ -57,10 +55,7 @@ public class PatentLookupService implements LookupService {
 
         List<Patent> patents = response1.getDocs();
 
-//        // Print the titles from the list of patents
-//        for(Patent patent : patents) {
-//            System.out.println(patent.getTitle());
-//        }
+
         return patents;
     }
 

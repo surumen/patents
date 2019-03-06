@@ -17,10 +17,6 @@ public class Application {
     @Autowired
     private PatentLookupService lookupService;
 
-//    public static void main(String args[]) {
-//        SpringApplication.run(Application.class, args);
-//    }
-
     public static void main(String args[]) {
         SpringApplication.run(Application.class);
     }
