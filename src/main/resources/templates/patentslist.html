@@ -12,7 +12,7 @@
 <body>
 <div class="container-fluid" style="margin-top: 20px">
     <div class="row">
-        <div class="col-md-12 col-md-offset-0">
+        <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-primary">
 
                 <div class="panel-heading">
@@ -23,20 +23,20 @@
                         <table class="table table-hover ">
                             <thead class="thead-inverse">
                             <tr>
-                                <th>Application Type</th>
                                 <th>Application Number</th>
                                 <th>Applicant</th>
                                 <th>Assignee</th>
                                 <th>Title</th>
+                                <th>Inventor</th>
                                 <th>Year</th>
                             </tr>
                             </thead>
                             <tr th:each="patent : ${patents}">
-                                <td th:text="${patent.applicationType}">UTILITY</td>
                                 <td th:text="${patent.applicationNumber}">US14643719</td>
                                 <td th:text="${patent.applicant}">Raytheon Company</td>
                                 <td th:text="${patent.assignee}">QUALCOMM</td>
                                 <td th:text="${patent.title}">Method of Manufacturing</td>
+                                <td th:text="${patent.inventor}">Inventor</td>
                                 <td th:text="${patent.year}">2019</td>
                             </tr>
                         </table>
