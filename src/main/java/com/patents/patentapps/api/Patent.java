@@ -1,4 +1,4 @@
-package com.patents.patentapps;
+package com.patents.patentapps.api;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
