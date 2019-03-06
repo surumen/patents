@@ -12,7 +12,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 
-import java.util.Arrays;
+
 import java.util.List;
 
 @SpringBootApplication
@@ -36,7 +36,6 @@ public class Application {
             // HttpHeaders
             HttpHeaders headers = new HttpHeaders();
 
-            headers.setAccept(Arrays.asList(new MediaType[] { MediaType.APPLICATION_JSON }));
             // Request to return JSON format
             headers.setContentType(MediaType.APPLICATION_JSON);
 
