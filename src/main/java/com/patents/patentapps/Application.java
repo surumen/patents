@@ -14,24 +14,24 @@ import java.util.List;
 
 @SpringBootApplication
 public class Application {
-    @Autowired
-    private PatentLookupService lookupService;
+//    @Autowired
+//    private PatentLookupService lookupService;
 
     public static void main(String args[]) {
-        SpringApplication.run(Application.class);
+        SpringApplication.run(Application.class, args);
     }
 
-    @Bean
-    public CommandLineRunner run() throws Exception {
-        return args -> {
-
-            List<Patent> patents = lookupService.getPatents();
-
-            // Print the titles from the list of patents
-            for(Patent patent : patents) {
-                System.out.println(patent.getTitle());
-            }
-        };
-    }
+//    @Bean
+//    public CommandLineRunner run() throws Exception {
+//        return args -> {
+//
+//            List<Patent> patents = lookupService.getPatents();
+//
+//            // Print the titles from the list of patents
+//            for(Patent patent : patents) {
+//                System.out.println(patent.getTitle());
+//            }
+//        };
+//    }
 
 }
