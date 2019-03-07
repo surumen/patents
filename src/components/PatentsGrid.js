@@ -5,6 +5,8 @@ import { Grid, GridColumn as Column } from '@progress/kendo-react-grid';
 
 import { orderBy } from '@progress/kendo-data-query';
 
+import '../assets/style.css';
+
 const API = 'http://localhost:5000/api/patents/';
 
 const columns = [
@@ -67,14 +69,15 @@ const columns = [
 ];
 
 
-class Display extends Component {
+class PatentsGrid extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       patents: [],
       sort: [
-            { field: 'applicationNumber', dir: 'asc' }
+            { field: 'applicationNumber', dir: 'asc' },
+            { field: 'year', dir: 'asc' }
       ],
       skip: 0, 
       take: 10,
@@ -120,13 +123,13 @@ class Display extends Component {
     }
 
     return (
-
       <Grid
         // style={{ height: '400px' }}
         data={orderBy(patents.slice(this.state.skip, 
           this.state.take + this.state.skip), 
           this.state.sort)}
         sortable
+        resizable
         sort={this.state.sort}
         skip={this.state.skip}
         take={this.state.take}
@@ -139,12 +142,14 @@ class Display extends Component {
             });
         }}
     >
-        <Column field="applicationNumber" title="Application Number"/>
+        <Column field="applicationNumber" title="Application Number" width="200px" minResizableWidth="200"/>
+        <Column field="applicant" title="Applicant" width="180px" minResizableWidth="180"/>
         <Column field="title" title="Title" />
-        <Column field="year" title="Year" />
+        <Column field="assignee" title="Assignee" width="180px" minResizableWidth="180"/>
+        <Column field="year" title="Year" width="100px" minResizableWidth="100"/>
     </Grid>
     );
   }
 }
 
-export default Display;
+export default PatentsGrid;
