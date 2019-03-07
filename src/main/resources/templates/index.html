@@ -1,42 +1,186 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html>
+
 <head>
-    <meta charset="UTF-8"/>
-    <title>Patent Applications</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"
-          th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}">
-
-    <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous" th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+    <meta charset='utf-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=11' />
+    <title>Patents API Documentation</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link href='css/base.css' rel='stylesheet' />
+    <link href='css/style.css' rel='stylesheet' />
+    <link href='css/railscasts.css' rel='stylesheet' />
 </head>
-<body>
-<div class="container-fluid" style="margin-top: 20px">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <form  th:action="@{/patents/}" method="post">
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-md-4 form-group">
-                            <label>Number of Patents to Display:</label>
-                            <input id="limit" name="limit" type="number" class="form-control"/>
 
+<body>
+    <div id="app">
+        <div data-reactroot="" class="container unlimiter">
+            <div class="space-top5 scroll-styled overflow-auto pad1 width16 sidebar fixed-left fill-dark dark">
+                <div class="pad0x small">
+                    <div class="small pad0x quiet space-top1">Introduction</div><a href="#our-api" class="line-height15 pad0x pad00y quiet block ">About this API</a>
+                    <div class="small pad0x quiet space-top1">Methods</div><a href="#patent" class="line-height15 pad0x pad00y quiet block ">Requests</a>
+                    <div class="space-left1"><a href="#list-patents" class="line-height15 pad0x pad00y quiet block ">List all Patents</a></div>
+                    <div class="space-left1"><a href="#create-patent" class="line-height15 pad0x pad00y quiet block ">Sample Data</a></div>
+                    <div class="space-left1"><a href="#retrieve-a-patent" class="line-height15 pad0x pad00y quiet block ">Retrieve a Patent</a></div>
+                </div>
+            </div>
+            <div class="space-left16">
+                <div class="col8 margin1">
+                    <div class="clearfix">
+                        <div data-title="About this API" class="keyline-top section contain clearfix ">
+                            <div class="space-bottom4 pad2x prose clip">
+                                <h2 id="our-api">Patents API</h2>
+                                <p>This API contains patent applications data fetched from the <a href="https://developer.uspto.gov/ibd-api-docs/">USPTO API</a>. It is designed to simplify your work so that you only focus on developing your front-end client. </p>
+                                <img src="architecture.png" class="big-graphic">
+                            </div>
+                            <div class="space-bottom4 pad2x prose clip">
+                                <h3 id="create-patent">Sample Data</h3>
+                                <p>The USPTO api provides the following information about the patent applications on their database.</p>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Parameter</th>
+                                            <th>Data Type</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>applicationType</code></td>
+                                            <td>String</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>documentId</code></td>
+                                            <td>String</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>applicationNumber</code></td>
+                                            <td>String</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>documentType</code></td>
+                                            <td>String</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>publicationDate</code></td>
+                                            <td>String</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>documentDate</code></td>
+                                            <td>String</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>productionDate</code></td>
+                                            <td>String</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>applicationDate</code></td>
+                                            <td>String</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>applicant</code></td>
+                                            <td>List of String(s)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>inventor</code></td>
+                                            <td>List of String(s)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>assignee</code></td>
+                                            <td>List of String(s)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>title</code></td>
+                                            <td>String</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>archiveUrl</code></td>
+                                            <td>String</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>pdfPath</code></td>
+                                            <td>String</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>year</code></td>
+                                            <td>String</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>_version_</code></td>
+                                            <td>Long</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                        <div data-title="List patents" class="keyline-top section contain clearfix ">
+                            <div class="space-bottom4 pad2x prose clip">
+                                <h3 id="list-patents">Get all Patents</h3>
+                                <p>You can view upto 100 patent applications at a time. Our API refreshes this data every 24 hours.</p>
+                            </div>
+                            <div class="space-bottom2 pad2 prose clip fill-light space-top5">
+                                <div class="endpoint dark fill-dark round ">
+                                    <div class="round-left pad0y pad1x fill-lighten0 code small endpoint-method">GET</div>
+                                    <div class="pad0 code small endpoint-url">/api/<span class="strong">patents/</span></div>
+                                </div>
+                                <h4 id="example-request">Example request</h4>
+                                <pre class="hljs">client.listPatents(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, patents</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(patents);
+});</pre>
+                                <h4 id="example-response">Example response</h4>
+                                <pre class="hljs">{
+ "_embedded" : {
+    "patents" : [ {
+        <span class="hljs-attr">"applicationType"</span>: <span class="hljs-string">"{applicationType}"</span>,
+        <span class="hljs-attr">"documentId"</span>: <span class="hljs-string">"{document_id}"</span>,
+        <span class="hljs-attr">"applicationNumber"</span>: <span class="hljs-string">"{application_number}"</span>,
+        <span class="hljs-attr">"assignee"</span>: <span class="hljs-string">"{assignee}"</span>
+        ...
+      },
+      ...
+    ]
+}</pre>
+                            </div>
                         </div>
+                        <div data-title="Retrieve a patent" class="keyline-top section contain clearfix ">
+                            <div class="space-bottom4 pad2x prose clip">
+                                <h3 id="retrieve-a-patent">Retrieve a Single Patent</h3>
+                                <p>Retrieve information about just one existing patent. The patents are identified by a number from 1 to 100.</p>
+                            </div>
+                            <div class="space-bottom2 pad2 prose clip fill-light space-top5">
+                                <div class="endpoint dark fill-dark round ">
+                                    <div class="round-left pad0y pad1x fill-lighten0 code small endpoint-method">GET</div>
+                                    <div class="pad0 code small endpoint-url">/api/<span class="strong">patents</span>/<span class="strong">{number}</span></div>
+                                </div>
+                                <h4 id="example-request-2">Example request</h4>
+                                <pre class="hljs">client.readPatent(<span class="hljs-string">'patent-number'</span>,
+  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, patent</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(patent);
+  });</pre>
+                                <h4 id="example-response-2">Example response</h4>
+                                <pre class="hljs">{
+  <span class="hljs-attr">"applicationType"</span>: <span class="hljs-string">"{type}"</span>,
+  <span class="hljs-attr">"documentId"</span>: <span class="hljs-string">"{doc_id}"</span>,
+  <span class="hljs-attr">"applicationNumber"</span>: <span class="hljs-string">"{app_num}"</span>,
+  <span class="hljs-attr">"documentType"</span>: <span class="hljs-string">"{doc_type}"</span>,
+  <span class="hljs-attr">"publicationDate"</span>: <span class="hljs-string">"{date}"</span>,
+  <span class="hljs-attr">"documentDate"</span>: <span class="hljs-string">"{date}"</span>,
+  <span class="hljs-attr">"productionDate"</span>: <span class="hljs-string">"{date}"</span>,
+  <span class="hljs-attr">"applicationDate"</span>: <span class="hljs-string">"{date}"</span>,
+  <span class="hljs-attr">"applicant"</span>: <span class="hljs-string">"{[applicant1, applicant2, ...]}"</span>,
+  <span class="hljs-attr">"inventor"</span>: <span class="hljs-string">"{[inventor1, inventor2, ...]}"</span>,
+  <span class="hljs-attr">"assignee"</span>: <span class="hljs-string">"{[assignee1, assignee2, ...]}"</span>,
+  <span class="hljs-attr">"title"</span>: <span class="hljs-string">"{title}"</span>,
+  ...
+}</pre>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
-            </form>
+            </div>
+            
+            
         </div>
     </div>
-</div>
 </body>
+
 </html>

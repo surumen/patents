@@ -3,10 +3,26 @@ package com.patents.patentapps.api;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.persistence.*;
+
+import lombok.Data;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import java.util.List;
 
+@Data
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown=true)
 public class Patent {
+
+    private @Id @GeneratedValue Long id;
 
     @JsonProperty("applicationType")
     private String applicationType;
@@ -32,12 +48,18 @@ public class Patent {
     @JsonProperty("applicationDate")
     private String applicationDate;
 
+    @Column
+    @ElementCollection(targetClass=String.class)
     @JsonProperty("applicant")
     private List<String> applicant;
 
+    @Column
+    @ElementCollection(targetClass=String.class)
     @JsonProperty("inventor")
     private List<String> inventor;
 
+    @Column
+    @ElementCollection(targetClass=String.class)
     @JsonProperty("assignee")
     private List<String> assignee;
 
@@ -55,6 +77,7 @@ public class Patent {
 
     @JsonProperty("_version_")
     private long version;
+
 
     public void setApplicationType(String applicationType){
         this.applicationType = applicationType;
