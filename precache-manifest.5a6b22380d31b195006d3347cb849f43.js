@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/patents/static/js/runtime~main.e86a3c26.js"
   },
   {
-    "revision": "0dcf46a8733f50e09fd8",
-    "url": "/patents/static/js/main.dae2760a.chunk.js"
+    "revision": "0a1668d70659dde52a45",
+    "url": "/patents/static/js/main.137d3af3.chunk.js"
   },
   {
     "revision": "27faa41e2d372d5a7731",
     "url": "/patents/static/js/2.33d1e660.chunk.js"
   },
   {
-    "revision": "0dcf46a8733f50e09fd8",
+    "revision": "0a1668d70659dde52a45",
     "url": "/patents/static/css/main.5fab6246.chunk.css"
   },
   {
-    "revision": "d9126638ec4d63de9ffc72b10ba3a875",
+    "revision": "d4e64a72b3b17a3fad3b03b9992277c4",
     "url": "/patents/index.html"
   }
 ];
