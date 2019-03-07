@@ -1,13 +1,14 @@
 {
   "main.css": "/patents/static/css/main.5fab6246.chunk.css",
-  "main.js": "/patents/static/js/main.137d3af3.chunk.js",
-  "main.js.map": "/patents/static/js/main.137d3af3.chunk.js.map",
+  "main.js": "/patents/static/js/main.61058a9f.chunk.js",
+  "main.js.map": "/patents/static/js/main.61058a9f.chunk.js.map",
   "runtime~main.js": "/patents/static/js/runtime~main.e86a3c26.js",
   "runtime~main.js.map": "/patents/static/js/runtime~main.e86a3c26.js.map",
-  "static/js/2.33d1e660.chunk.js": "/patents/static/js/2.33d1e660.chunk.js",
-  "static/js/2.33d1e660.chunk.js.map": "/patents/static/js/2.33d1e660.chunk.js.map",
+  "static/js/2.97142fa6.chunk.js": "/patents/static/js/2.97142fa6.chunk.js",
+  "static/js/2.97142fa6.chunk.js.map": "/patents/static/js/2.97142fa6.chunk.js.map",
   "index.html": "/patents/index.html",
-  "precache-manifest.5a6b22380d31b195006d3347cb849f43.js": "/patents/precache-manifest.5a6b22380d31b195006d3347cb849f43.js",
+  "precache-manifest.ba639ba33968c48c56ff2b63a4b6f091.js": "/patents/precache-manifest.ba639ba33968c48c56ff2b63a4b6f091.js",
   "service-worker.js": "/patents/service-worker.js",
-  "static/css/main.5fab6246.chunk.css.map": "/patents/static/css/main.5fab6246.chunk.css.map"
+  "static/css/main.5fab6246.chunk.css.map": "/patents/static/css/main.5fab6246.chunk.css.map",
+  "static/media/logo.svg": "/patents/static/media/logo.6225bceb.svg"
 }
