@@ -143,11 +143,11 @@ class PatentsGrid extends Component {
             });
         }}
     >
-        <Column field="applicationNumber" title="Application Number" width="200px" minResizableWidth="200"/>
-        <Column field="applicant" title="Applicant" width="180px" minResizableWidth="180"/>
+        <Column field="applicationNumber" title="Application Number" width="200px"/>
+        <Column field="applicant" title="Applicant" width="180px"/>
         <Column field="title" title="Title" />
-        <Column field="assignee" title="Assignee" width="180px" minResizableWidth="180"/>
-        <Column field="year" title="Year" width="100px" minResizableWidth="100"/>
+        <Column field="assignee" title="Assignee" width="180px"/>
+        <Column field="year" title="Year" width="100px"/>
     </Grid>
     );
   }
