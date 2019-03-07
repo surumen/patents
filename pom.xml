@@ -17,6 +17,11 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
+		<beanstalk.versionLabel>${maven.build.timestamp}</beanstalk.versionLabel>
+		<beanstalk.applicationName>patents</beanstalk.applicationName>
+		<beanstalker.region>us-east-2</beanstalker.region>
+		<beanstalk.cnamePrefix>patents</beanstalk.cnamePrefix>
 	</properties>
 
 	<dependencies>
@@ -154,6 +159,19 @@
 				</executions>
 			</plugin>
 			<!-- end::frontend-maven-plugin[] -->
+			<plugin>
+				<groupId>br.com.ingenieux</groupId>
+				<artifactId>beanstalk-maven-plugin</artifactId>
+				<version>1.5.0</version>
+				<configuration>
+					<s3Bucket>patent-applications.us-east-2.elasticbeanstalk.com</s3Bucket>
+					<s3Key>${project.artifactId}/${project.build.finalName}-${maven.build.timestamp}.jar</s3Key>
+					<applicationName>patents</applicationName>
+					<environmentName>patents-env</environmentName>
+					<environmentRef>patents-env</environmentRef>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 	<repositories>
