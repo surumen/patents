@@ -7,7 +7,7 @@ import { orderBy } from '@progress/kendo-data-query';
 
 import '../assets/style.css';
 
-const API = 'http://patentsapi-dev.us-east-2.elasticbeanstalk.com/api/patents';
+const API = '//patentsapi-dev.us-east-2.elasticbeanstalk.com/api/patents';
 //const API = 'http://localhost:5000/api/patents';
 
 const columns = [
