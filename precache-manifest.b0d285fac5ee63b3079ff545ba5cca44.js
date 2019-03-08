@@ -8,19 +8,19 @@ self.__precacheManifest = [
     "url": "/patents/static/js/runtime~main.e86a3c26.js"
   },
   {
-    "revision": "c4175bb56c1e69d3b89e",
-    "url": "/patents/static/js/main.ddc48c5e.chunk.js"
+    "revision": "3f52e6cffb0288429b38",
+    "url": "/patents/static/js/main.a71a342f.chunk.js"
   },
   {
     "revision": "bf4822dee8052665f2c2",
     "url": "/patents/static/js/2.97142fa6.chunk.js"
   },
   {
-    "revision": "c4175bb56c1e69d3b89e",
+    "revision": "3f52e6cffb0288429b38",
     "url": "/patents/static/css/main.5fab6246.chunk.css"
   },
   {
-    "revision": "e7b5017b6c55d13805cb25b19798c511",
+    "revision": "877971ee1c6bebb083c04eff97917b95",
     "url": "/patents/index.html"
   }
 ];
