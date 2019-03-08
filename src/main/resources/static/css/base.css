@@ -56,7 +56,7 @@ button::-moz-focus-inner {
 body,
 input,
 textarea {
-  color:#404040;
+  color:#286dc0;
   color:rgba(0,0,0,0.75);
   font:15px/20px sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -552,7 +552,7 @@ a.quiet.dark.active, a.quiet.dark:hover { color:rgba(255,255,255,0.5); }
     border-radius: 3px;
     }
 
-.dark.fill-dark .pill > *   { border-color:#404040; }
+.dark.fill-dark .pill > *   { border-color:#286dc0; }
 .fill-gray .pill > *,
 .fill-grey .pill > *        { border-color:#eee; }
 .fill-white .pill > *       { border-color:#fff; }
@@ -667,7 +667,7 @@ a.quiet.dark.active, a.quiet.dark:hover { color:rgba(255,255,255,0.5); }
 .dark .rounded-toggle .active { color: white; }
 
 .fill-dark .rounded-toggle input[type=radio]:checked + label,
-.fill-dark .rounded-toggle .active        { background-color:#404040; }
+.fill-dark .rounded-toggle .active        { background-color:#286dc0; }
 .fill-gray  .rounded-toggle input[type=radio]:checked + label,
 .fill-gray .rounded-toggle .active,
 .fill-grey .rounded-toggle input[type=radio]:checked + label,
@@ -675,7 +675,7 @@ a.quiet.dark.active, a.quiet.dark:hover { color:rgba(255,255,255,0.5); }
 .fill-grey-dark .rounded-toggle input[type=radio]:checked + label,
 .fill-grey-dark .rounded-toggle .active,
 .fill-gray-dark .rounded-toggle input[type=radio]:checked + label,
-.fill-gray-dark .rounded-toggle .active   { background:#404040; }
+.fill-gray-dark .rounded-toggle .active   { background:#286dc0; }
 .fill-white .rounded-toggle input[type=radio]:checked + label,
 .fill-white .rounded-toggle .active       { background:#fff; }
 .fill-light .rounded-toggle input[type=radio]:checked + label,
@@ -946,7 +946,7 @@ input[type=number] {
   .dark input[type=date],
   .dark input[type=email],
   .dark input[type=number] {
-    background:#404040;
+    background:#286dc0;
     background:rgba(0,0,0,0.25);
     border-color:#eee;
     border-color:rgba(255,255,255,0.25);
@@ -961,7 +961,7 @@ input[type=number] {
   input[type=number]:focus {
     outline:thin dotted\8; /* ie8 below */
     border-color:rgba(0,0,0,0.25);
-    color:#404040;
+    color:#286dc0;
     }
     .dark textarea:focus,
     .dark input[type=password]:focus,
@@ -3017,11 +3017,11 @@ Alternate exists for:
 
 /* Fills
 -------------------------------------------------------- */
-.fill-dark        { background-color:#404040; }
+.fill-dark        { background-color:#286dc0; }
 .fill-gray,
 .fill-grey        { background:#eee; }
 .fill-grey-dark,
-.fill-gray-dark   { background:#404040; }
+.fill-gray-dark   { background:#286dc0; }
 .fill-white       { background:#fff; }
 .fill-light       { background:#f8f8f8; }
 /* deprecated, use fill-cyan */
@@ -3102,10 +3102,10 @@ pre .cp,
 pre .cm   { color:#999; font-style:italic; }
 pre .err  { color:#F00000; background-color:#F0A0A0 } /* Error */
 
-pre .k      { color:#404040; font-weight:bold; } /* Keyword */
+pre .k      { color:#286dc0; font-weight:bold; } /* Keyword */
 pre .css .k { font-weight:normal; }
 
-pre .cs   { color:#404040; font-style:italic; } /* Comment.Special */
+pre .cs   { color:#286dc0; font-style:italic; } /* Comment.Special */
 pre .gd   { color:#A00000; } /* Generic.Deleted */
 pre .ge   { font-style:italic } /* Generic.Emph */
 pre .gs   { font-weight:bold; } /* Generic.Strong */
@@ -3147,7 +3147,7 @@ pre .ne   { color:#F00000; } /* Name.Exception */
 pre .nn   { color:#0e84b5; } /* Name.Namespace */
 
 pre .nv   { color:#003060; } /* Name.Variable */
-pre .ow   { color:#404040; } /* Operator.Word */
+pre .ow   { color:#286dc0; } /* Operator.Word */
 pre .w    { color:#bbbbbb; } /* Text.Whitespace */
 pre .sc   { color:#8080F0; } /* Literal.String.Char */
 pre .sd   { color:#D04020; } /* Literal.String.Doc */

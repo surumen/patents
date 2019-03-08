@@ -67,6 +67,7 @@ body pre {
 .pad00y { padding-top: 2px; padding-bottom: 2px; }
 .space-bottom00 { margin-bottom: 3px;}
 
+.fill-darkbase { background-color: #4a4a4a; }
 .endpoint {
   width: 100%;
   display: flex;
