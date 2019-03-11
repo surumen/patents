@@ -1,74 +1,16 @@
 import React, { Component } from 'react';
-
 import ReactDOM from 'react-dom';
 import { Grid, GridColumn as Column } from '@progress/kendo-react-grid';
+import Moment from 'moment';
 
 import { orderBy } from '@progress/kendo-data-query';
 
 import '../assets/style.css';
 
-const API = '//patentsapi-dev.us-east-2.elasticbeanstalk.com/api/patents';
-//const API = 'http://localhost:5000/api/patents';
+//const API = 'http://patentsapi-dev.us-east-2.elasticbeanstalk.com/api/patents';
+const API = 'http://localhost:5000/api/patents';
 
-const columns = [
- {
-  name: "applicationNumber",
-  label: "Application Number",
-  options: {
-   filter: true,
-   sort: true,
-  }
- },
- {
-  name: "applicationType",
-  label: "Application Type",
-  options: {
-   filter: true,
-   sort: true,
-  }
- },
- {
-  name: "applicant",
-  label: "Applicant",
-  options: {
-   filter: true,
-   sort: true,
-  }
- },
- {
-  name: "inventor",
-  label: "Inventor",
-  options: {
-   filter: true,
-   sort: true,
-  }
- },
- {
-  name: "assignee",
-  label: "Assignee",
-  options: {
-   filter: true,
-   sort: true,
-  }
- },
- {
-  name: "title",
-  label: "Title",
-  options: {
-   filter: false,
-   sort: true,
-  }
- },
- {
-  name: "year",
-  label: "Year",
-  options: {
-   filter: true,
-   sort: true,
-  }
- },
-];
-
+//const PAGE = [1...500];
 
 class PatentsGrid extends Component {
   constructor(props) {
@@ -76,10 +18,17 @@ class PatentsGrid extends Component {
 
     this.state = {
       patents: [],
+      //patents.publicationDate = moment(patents.publicationDate).format('YYYY-MM-DD'),
       sort: [
             { field: 'applicationNumber', dir: 'asc' },
             { field: 'year', dir: 'asc' }
       ],
+     filter: {
+      logic: "and",
+      filters: [
+            { field: "applicationNumber", operator: "contains", value: "US14123354" }
+      ],
+      },
       skip: 0, 
       take: 10,
       isLoading: false,
@@ -114,6 +63,7 @@ class PatentsGrid extends Component {
 
   render() {
     const { patents, isLoading, error } = this.state;
+    const publicationDate = Moment(patents.publicationDate).format().toString();
 
     if (error) {
       return <p>{error.message}</p>;
@@ -131,6 +81,13 @@ class PatentsGrid extends Component {
           this.state.sort)}
         sortable
         resizable
+        filterable
+        filter={this.state.filter}
+        onFilterChange={(e) => {
+            this.setState({
+                filter: e.filter
+            });
+        }}
         sort={this.state.sort}
         skip={this.state.skip}
         take={this.state.take}
@@ -147,6 +104,7 @@ class PatentsGrid extends Component {
         <Column field="applicant" title="Applicant" width="180px"/>
         <Column field="title" title="Title" />
         <Column field="assignee" title="Assignee" width="180px"/>
+        <Column field={Moment("publicationDate", 'YYYY-MM-DD').toString()} title="Publication Date" width="180px"/>
         <Column field="year" title="Year" width="100px"/>
     </Grid>
     );

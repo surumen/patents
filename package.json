@@ -5,7 +5,9 @@
   "homepage": "https://surumen.github.io/patents",
   "dependencies": {
     "@progress/kendo-data-query": "^1.5.0",
+    "@progress/kendo-drawing": "^1.5.8",
     "@progress/kendo-react-animation": "^2.7.1",
+    "@progress/kendo-react-charts": "^2.7.1",
     "@progress/kendo-react-dateinputs": "^2.7.1",
     "@progress/kendo-react-dropdowns": "^2.7.1",
     "@progress/kendo-react-grid": "^2.7.1",
@@ -13,6 +15,7 @@
     "@progress/kendo-react-intl": "^2.7.1",
     "@progress/kendo-react-popup": "^2.7.1",
     "gh-pages": "^2.0.1",
+    "moment": "^2.24.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-scripts": "2.1.8"
